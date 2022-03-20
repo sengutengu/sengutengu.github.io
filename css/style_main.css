@@ -1,0 +1,40 @@
+/* Project Meta */
+
+/* reset  */
+
+/* general */
+
+/* typography */
+
+@font-face {
+    font-family: 'paratype';
+    src: url('../fonts/PT_Serif/PTSerif-Regular.ttf');
+}
+@font-face {
+    font-family: 'paratype';
+    src: url('../fonts/PT_Serif/PTSerif-Italic.ttf');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'paratype';
+    src: url('../fonts/PT_Serif/PTSerif-Bold.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'paratype';
+    src: url('../fonts/PT_Serif/PTSerif-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* grid */
+
+/* header */
+
+/* footer */
+
+/* Page template A */
+
+/* Page template B */
+
+/* Media Queries */
