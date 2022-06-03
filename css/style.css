@@ -2,24 +2,24 @@
 
 @font-face {
   font-family: 'poppins';
-  src: url('./../fonts/Poppins/Poppins-Regular.ttf');
+  src: url('Poppins-Regular.ttf');
 }
 
 @font-face {
   font-family: 'poppins';
-  src: url('./../fonts/Poppins/Poppins-Bold.ttf');
+  src: url('Poppins-Bold.ttf');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'poppins';
-  src: url('./../fonts/Poppins/Poppins-Italic.ttf');
+  src: url('Poppins-Italic.ttf');
   font-style: italic;
 }
 
 @font-face {
   font-family: 'poppins';
-  src: url('./../fonts/Poppins/Poppins-BoldItalic.ttf');
+  src: url('Poppins-BoldItalic.ttf');
   font-weight: bold;
   font-style: italic;
 }
