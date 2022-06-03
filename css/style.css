@@ -9,19 +9,19 @@
 
 @font-face {
   font-family: 'poppins';
-  src: url('Poppins-Bold.ttf');
+  src: url('../fonts/Poppins/Poppins-Bold.ttf');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'poppins';
-  src: url('Poppins-Italic.ttf');
+  src: url('../fonts/Poppins/Poppins-Italic.ttf');
   font-style: italic;
 }
 
 @font-face {
   font-family: 'poppins';
-  src: url('Poppins-BoldItalic.ttf');
+  src: url('../fonts/Poppins/Poppins-BoldItalic.ttf');
   font-weight: bold;
   font-style: italic;
 }
