@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'poppins';
-  src: url('Poppins-Regular.ttf');
+  src: url('Poppins-Bold.ttf');
 }
 
 @font-face {
@@ -28,7 +28,6 @@
 
 * {
   font-family: 'poppins';
-
 }
 
 *, *::before, *::after {
