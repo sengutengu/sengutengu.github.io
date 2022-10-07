@@ -1,0 +1,154 @@
+/* ======== FONTS ======== */
+
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/Poppins/Poppins-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/Poppins/Poppins-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/Poppins/Poppins-Italic.ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/Poppins/Poppins-BoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ======== DIVS ======== */
+
+* {
+  font-family: 'poppins';
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --hue-neutral: 0;
+  --hue-wrong: 0;
+  --hue-correct: 207;
+}
+
+.btn-grid {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0px;
+}
+
+.btn {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: left;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 16px;
+  border: 0px;
+  border-radius: 10px;
+  --hue: var(--hue-neutral);
+  background-color: hsl(var(--hue), 0%, 91%);
+}
+
+.btn:hover {
+  --hue: var(--hue-neutral);
+  background-color: hsl(var(--hue), 0%, 77%);
+}
+.btn.correct {
+  --hue: var(--hue-correct);
+  background-color: hsl(var(--hue), 76%, 86%);
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+  background-color: hsl(var(--hue), 100%, 86%);
+}
+
+#next-btn, #start-btn {
+  background-color: hsl(207, 90%, 61%);
+  padding: 10px;
+  text-align: center;
+  font-family: 'poppins';
+}
+
+#next-btn:hover, #start-btn:hover {
+  background-color: hsl(207, 90%, 50%);
+  padding: 10px;
+  text-align: center;
+  font-family: 'poppins';
+}
+
+.hide {
+  display: none;
+}
+
+
+}
+#question {
+  margin: 30px 0px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+article {
+  font-family: 'poppins';
+  margin: 10% 15%;
+}
+
+table, td, th {
+  margin: 10px auto 10px auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+
+td {
+  padding: 5px 10px 5px 10px;
+}
+
+.header {
+
+  height: 295px;
+  line-height: 295px;
+
+  text-align: center;
+
+  font-size: 60px;
+  font-weight: bold;
+
+  background-color: #F8FDFF;
+  background-image: url('../images/header.svg');
+  background-position: center 0;
+  background-repeat: no-repeat;
+
+
+}
+
+h1 {
+  text-align: center;
+}
+
+article#main {
+  margin: 0% 15%;
+  padding: 0;
+
+}

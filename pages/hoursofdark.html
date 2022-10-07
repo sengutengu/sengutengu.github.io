@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hours of Dark Tutorial</title>
+        <link rel="stylesheet" href="./styles/style.css">
+        <style>
+            /* roboto-mono-regular - latin-ext_latin */
+            @font-face {
+                font-family: 'Roboto Mono';
+                font-style: normal;
+                font-weight: 400;
+                src: url('../fonts/roboto-mono-v22-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+                src: local(''),
+                    url('../fonts/roboto-mono-v22-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                    url('../fonts/roboto-mono-v22-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+                    url('../fonts/roboto-mono-v22-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+                    url('../fonts/roboto-mono-v22-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+                    url('../fonts/roboto-mono-v22-latin-ext_latin-regular.svg#RobotoMono') format('svg'); /* Legacy iOS */
+            }
+
+            html * {
+                font-family: 'Roboto Mono';
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Hours of Dark</h1>
+            <h2>Bruno Imbrizi's tutorial on generative artistry</h2>
+            <canvas></canvas>
+            <script>
+                var canvas = document.querySelector('canvas');
+                var context = canvas.getContext('2d');
+
+                var size = window.innerWidth;
+                var dpr = window.devicePixelRatio;
+                canvas.width = size * dpr;
+                canvas.height = size * dpr;
+                context.scale(dpr, dpr);
+
+                var cols = 23;
+                var rows = 16;
+                var days = 365;
+
+                var gridw = size * 0.5;
+                var gridh = size * 0.5;
+                var cellw = gridw / cols;
+                var cellh = gridh / rows;
+                var margx = (size - gridw) * 0.5;
+                var margy = (size - gridh) * 0.5;
+
+                for (let i = 0; i < days; i++) {
+                    var col = Math.floor(i/rows);
+                    var row = i % rows;
+
+                    var x = margx + col * cellw;
+                    var y = margy + row * cellh;
+                    var w = 2;
+                    var h = 30;
+
+                    context.save();
+                    context.translate(x, y);
+
+                    context.beginPath();
+                    context.rect(0, 0, cellw, cellh);
+                    context.clip();
+
+                    context.translate(cellw * 0.5, cellh * 0.5);
+
+                    var phi = (i / days) * Math.PI;
+                    var theta = Math.sin(phi) * Math.PI * 0.45 + 0.85;
+
+                    context.rotate(theta);
+
+                    var scale = Math.abs(Math.cos(phi)) * 2 + 1;
+
+                    context.scale(scale, 1);
+
+                    context.beginPath();
+                    context.rect(w * -0.5, h * -0.5, w, h);
+                    context.fill();
+
+                    context.restore();
+                }
+            </script>
+        </div>
+    </body>
+</html>
