@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fun.css">
+    <title>For Fun</title>
+</head>
+<body>
+    <div class="main">
+        <div id="peach" onclick="shortenAnimationDuration()">🍑</div>
+        <button id="phallus" onclick="shortenAnimationDuration()">𓂸𓀀</button>
+    </div>
+        <div id="status">Status: <div id="status-text"> Gentle loving</div></div>
+    <script>
+
+        function shortenAnimationDuration() {
+            obj = document.getElementById('peach');
+            obj2 = document.getElementById('phallus');
+            statusText = document.getElementById('status-text');
+            currentAnimationDuration = parseFloat(window.getComputedStyle(obj).animationDuration) * 1000;
+            if (currentAnimationDuration > 1000) {
+                obj.style.animationDuration = currentAnimationDuration - 300 + 'ms';
+                obj2.style.animationDuration = currentAnimationDuration - 300 + 'ms';
+                statusText.textContent = "Getting worked up...";
+            } else if (currentAnimationDuration > 500) {
+                obj.style.animationDuration = currentAnimationDuration - 500 + 'ms';
+                obj2.style.animationDuration = currentAnimationDuration - 500 + 'ms';
+                statusText.textContent = "Keeping it up";
+            } else if (currentAnimationDuration > 300) {
+                obj.style.animationDuration = currentAnimationDuration - 200 + 'ms';
+                obj2.style.animationDuration = currentAnimationDuration - 200 + 'ms';
+                statusText.textContent = "Close"
+            } else if (currentAnimationDuration > 50) {
+                obj.style.animationDuration = '50ms';
+                obj2.style.animationDuration = '50ms';
+                statusText.textContent = "About to nut";
+            } else if (currentAnimationDuration == 50) {
+                obj.textContent = "🍑💦";
+                obj2.textContent = "𓂺𓀀";
+                obj.style.animationDuration = '0ms';
+                obj2.style.animationDuration = '0ms';
+                var d = new Date();
+                lastClick = d.getTime();
+                console.log(lastClick);
+                statusText.textContent = "Nutted";
+            } else if (currentAnimationDuration = '0ms') {
+                var d = new Date();
+                var t = d.getTime();
+                console.log(t);
+                console.log(t-lastClick);
+                if (t-lastClick < 5000) {
+                    statusText.textContent = `Refractory period (${(5000-(t-lastClick))/1000}s remaining; shortened for better gameplay)`;
+                } else {
+                    obj.textContent = "🍑";
+                    obj2.textContent = "𓂸𓀀";
+                    obj.style.animationDuration = '1500ms';
+                    obj2.style.animationDuration = '1500ms';
+                    lastClick = t;
+                    statusText.textContent = "Another round";
+                }
+            }
+            updatedAnimationDuration = parseFloat(window.getComputedStyle(obj).animationDuration) * 1000;
+        }
+    </script>
+</body>
+</html>
