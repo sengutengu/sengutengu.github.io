@@ -1,35 +1,30 @@
 /* ======== FONTS ======== */
 
 @font-face {
-  font-family: 'poppins';
-  src: url('../fonts/Poppins/Poppins-Regular.ttf');
+  font-family: 'Outfit';
+  src: url('../fonts/Outfit/Outfit-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'poppins';
-  src: url('../fonts/Poppins/Poppins-Bold.ttf');
+  font-family: 'Outfit';
+  src: url('../fonts/Outfit/Outfit-SemiBold.ttf') format('truetype');
   font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'poppins';
-  src: url('../fonts/Poppins/Poppins-Italic.ttf');
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'poppins';
-  src: url('../fonts/Poppins/Poppins-BoldItalic.ttf');
-  font-weight: bold;
-  font-style: italic;
+  font-family: 'Noto';
+  src: url('../fonts/Noto/NotoSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* ======== DIVS ======== */
 
 * {
-  font-family: 'poppins';
+  font-family: 'Outfit';
 }
 
 *, *::before, *::after {
@@ -49,11 +44,11 @@
 }
 
 .btn {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Noto', sans-serif;
   text-align: left;
-  padding: 10px;
+  padding: 15px 20px;
   padding-left: 20px;
-  font-size: 16px;
+  font-size: 25px;
   border: 0px;
   border-radius: 10px;
   --hue: var(--hue-neutral);
@@ -76,16 +71,12 @@
 
 #next-btn, #start-btn {
   background-color: hsl(207, 90%, 61%);
-  padding: 10px;
   text-align: center;
-  font-family: 'poppins';
+  font-family: 'Outfit';
 }
 
 #next-btn:hover, #start-btn:hover {
   background-color: hsl(207, 90%, 50%);
-  padding: 10px;
-  text-align: center;
-  font-family: 'poppins';
 }
 
 .hide {
@@ -93,7 +84,6 @@
 }
 
 
-}
 #question {
   margin: 30px 0px;
 }
@@ -110,8 +100,9 @@ span {
 }
 
 article {
-  font-family: 'poppins';
-  margin: 10% 15%;
+  font-family: 'Outfit';
+  font-size: 25px;
+  margin: 100px 20%;
 }
 
 table, td, th {
