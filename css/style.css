@@ -166,3 +166,7 @@ main {
     color: black;
     text-decoration: none;
 }
+
+footer {
+    height: 100px;
+}
