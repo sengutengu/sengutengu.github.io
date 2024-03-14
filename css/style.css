@@ -158,6 +158,10 @@ main {
     column-gap: 10px;
 }
 
+.page-desc .text {
+    margin-bottom: 15px;
+}
+
 .text-link {
     color: #12680A;
 }
@@ -169,4 +173,30 @@ main {
 
 footer {
     height: 100px;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    color: black;
+    font-size: 12px;
+    z-index: 1;
+    text-align: center;
+}
+
+.hover-text {
+    text-decoration-line: underline;
+}
+
+.hover-text:hover .tooltip-text{
+    visibility: visible;
+}
+
+.tooltip-wrapper {
+    position: relative;
+}
+.tooltip-top {
+    top: -4px;
+    left: 0px;
 }
