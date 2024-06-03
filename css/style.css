@@ -19,6 +19,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Consolas';
+    src: url('../fonts/Consolas.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Latin Modern Math';
+    src: url('../fonts/latinmodern-math.otf') format('opentype');
+}
 * {
     box-sizing: border-box;
     font-family: 'Outfit';
@@ -199,4 +208,30 @@ footer {
 .tooltip-top {
     top: -4px;
     left: 0px;
+}
+
+article {
+    margin: 0 25%;
+    padding: 3em;
+    background-color:white;
+}
+
+PRE {
+    padding-top: 1em;
+    background-color:#313338;
+    color: white;
+    font-family: "Consolas";
+}
+
+code {
+    font-family: "Consolas";
+}
+
+math {
+    font-family: "Latin Modern Math";
+    margin: 2em;
+}
+
+math * {
+    font-family: "Latin Modern Math";
 }

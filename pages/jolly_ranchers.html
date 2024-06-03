@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Jolly Rancher Analysis</title>
+</head>
+<body>
+    <article>
+        <p>
+            (June 3, 2024) Yesterday, I happened across this reddit post that showed a <i>very</i> uneven distribution of Jolly Rancher flavors in two bags:
+        </p>
+        <blockquote class="reddit-embed-bq" style="height:500px" data-embed-height="740"><a href="https://www.reddit.com/r/mildlyinteresting/comments/1d6lxdd/uneven_distribution_of_jolly_ranchers_in_2_400g/">Uneven distribution of Jolly Ranchers in 2 400g (7oz) bags.</a><br> by<a href="https://www.reddit.com/user/Cancel_me_now/">u/Cancel_me_now</a> in<a href="https://www.reddit.com/r/mildlyinteresting/">mildlyinteresting</a></blockquote><script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
+        <p>
+            I was wondering if a fair sorting machine could feasibly produce this kind of distribution. 
+            Another way of posing this question would be: does Hershey try to put equal amounts of all flavors into a bag?
+            In this situation, the null hypothesis would be that the observed distribution came from a fair sorting machine, 
+            and the alternate hypothesis that the observed distribution did not come from a fair sorting machine.
+            I decided to run a chi-square goodness of fit test to find out. 
+        </p>
+        <p>
+            First, I counted all the flavors and added them up:
+        </p>
+        <PRE>
+    grape <- 4
+    cherry <- 8
+    apple <- 12
+    watermelon <- 24
+    raspberry <- 20
+    count <- c(grape, cherry, apple, watermelon, raspberry)
+    count
+    ----------
+    >>> 68
+        </PRE>
+        
+        <p>
+            It turns out that in two bags, there were 68 Jolly Ranchers. 
+            Dividing this figure by the number of flavors, we can get the expected value (13.6) of each flavor if the machine sorting was truly fair.
+        </p>
+        <PRE>
+    
+    expected_value <- sum(count)/5
+    expected_value
+    ----------
+    >>> 13.6
+        </PRE>
+        <p>
+            Then, I calculated the chi-square statistic (20.235) and the degrees of freedom (4) following the chi-square formula:
+            <math display="block" class="tml-display" style="display:block math;">
+                <mrow>
+                  <msup>
+                    <mi>χ</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mo>=</mo>
+                  <mo movablelimits="false">∑</mo>
+                  <mfrac>
+                    <mrow>
+                      <mo form="prefix" stretchy="false" lspace="0em" rspace="0em">(</mo>
+                      <mtext>observed</mtext>
+                      <mo>−</mo>
+                      <mtext>expected</mtext>
+                      <msup>
+                        <mo form="postfix" stretchy="false">)</mo>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                    <mtext>expected</mtext>
+                  </mfrac>
+                </mrow>
+              </math>
+        </p>
+        <PRE>
+    Xsq <- sum(((count-expected_value)^2)/expected_value)
+    df <- length(count)-1
+    Xsq
+    df
+    ----------
+    >>> 20.23529
+    >>> 4
+        </PRE>
+        <p>
+            Finally, I used the <code>pchisq()</code> function to calculate the p-value (p=0.000449).
+        </p>
+        <PRE>
+    pchisq(Xsq, df, lower.tail=F)
+    ----------
+    0.0004487191
+        </PRE>
+        <p>
+            It turns out that a totally fair Jolly Rancher sorting machine would have a 0.0449% chance of producing the mix of Jolly Ranchers in these two bags.
+            This is exceedingly unlikely, and we can safely rule out the null hypothesis that these Jolly Ranchers came from a fair sorting machine. 
+        </p>
+        <p>
+            Because the grape flavor is generally regarded as the worst flavor, I think Hershey may have decided to decrease 
+            the number of grape Jolly Ranchers in each bag, and reward the popular opinion that watermelon and blue raspberry 
+            are the best. I reached out to Hershey to ask about the actual ratio that they shoot for but I haven't heard back yet.
+        </p>
+    </article>
+    
+</body>
+</html>
