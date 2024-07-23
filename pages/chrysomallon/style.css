@@ -113,7 +113,15 @@ img {
     padding: 5%;
 }
 
+.img-stack {
+    position: relative;
+}
 
+.img-stack img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 /* map */
 #map { 
@@ -134,4 +142,13 @@ img {
 
 .leaflet-popup-content {
     font-size: 2em !important;
+}
+
+.layer {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.visible {
+    opacity: 1;
 }

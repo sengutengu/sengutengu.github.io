@@ -28,6 +28,76 @@ var mapSection = main.querySelector("#discovering");
 var steps = mapSection.querySelectorAll(".step");
 console.log(steps);
 
+// get variables for anatomy
+const base = document.querySelector("#base");
+const scales = document.querySelector("#scales");
+const shell = document.querySelector("#shell");
+const nervous = document.querySelector("#nervous");
+const circulatory = document.querySelector("#circulatory");
+const anat_layers = [scales, shell, nervous, circulatory]
+
+function resetVisible(layers) {
+  for (i in layers) {
+    layers[i].classList.remove("visible");
+  }
+}
+
+function handleAnatomy() {
+  if (stepData == "anat_b") {
+    resetVisible(anat_layers);
+    scales.classList.add("visible");
+  } else if (stepData == "anat_c") {
+    resetVisible(anat_layers);
+    shell.classList.add("visible");
+  } else if (stepData == "anat_d") {
+    resetVisible(anat_layers);
+    nervous.classList.add("visible");
+  } else if (stepData == "anat_e") {
+    resetVisible(anat_layers);
+    circulatory.classList.add("visible");
+  } else {
+    resetVisible(anat_layers);
+  }
+}
+
+function handleMap() {
+  if (stepData == "map_a") {
+    console.log("hello")
+    map.flyTo([-20.424956, 72.565296], 3);
+    map.removeLayer(kairei);
+    map.removeLayer(solitaire);
+    map.removeLayer(longqi);
+  } else if (stepData == "map_b") {
+      map.flyTo([-25.319444, 70.04], 4);
+      map.addLayer(kairei);
+      map.removeLayer(solitaire);
+      map.removeLayer(longqi);
+  } else if (stepData == "map_c") {
+      map.flyTo([-28.786227, 57.832342], 4);
+      map.removeLayer(kairei);
+      map.addLayer(solitaire);
+      map.addLayer(longqi);
+      map.removeLayer(kairei_pop);
+      map.removeLayer(solitaire_pop);
+      map.removeLayer(longqi_pop);
+  } else if (stepData == "map_d") {
+      map.flyTo([-27.786227, 58.832342], 3.5);
+      map.addLayer(kairei);
+      map.addLayer(solitaire);
+      map.addLayer(longqi);
+      map.addLayer(kairei_pop);
+      map.addLayer(solitaire_pop);
+      map.addLayer(longqi_pop);
+  } else {
+      map.flyTo([5.236302, 79.006576], 2.5)
+      map.removeLayer(kairei);
+      map.removeLayer(solitaire);
+      map.removeLayer(longqi);
+      map.removeLayer(kairei_pop);
+      map.removeLayer(solitaire_pop);
+      map.removeLayer(longqi_pop);
+  }
+}
 // instantiate the scrollama
 const scroller = scrollama();
 
@@ -48,46 +118,14 @@ scroller
     el.classList.remove("invisible");
     el.classList.add("active");
 
-
+    if (stepData.startsWith("anat_")) {
+      handleAnatomy();
+    } else if (stepData.startsWith("map_")) {
+      handleMap();
+    }
     // { element, index, direction }
 
     console.log("enter", response);
-    if (stepData == "map_a") {
-        console.log("hello")
-        map.flyTo([-20.424956, 72.565296], 3);
-        map.removeLayer(kairei);
-        map.removeLayer(solitaire);
-        map.removeLayer(longqi);
-    } else if (stepData == "map_b") {
-        map.flyTo([-25.319444, 70.04], 4);
-        map.addLayer(kairei);
-        map.removeLayer(solitaire);
-        map.removeLayer(longqi);
-    } else if (stepData == "map_c") {
-        map.flyTo([-28.786227, 57.832342], 4);
-        map.removeLayer(kairei);
-        map.addLayer(solitaire);
-        map.addLayer(longqi);
-        map.removeLayer(kairei_pop);
-        map.removeLayer(solitaire_pop);
-        map.removeLayer(longqi_pop);
-    } else if (stepData == "map_d") {
-        map.flyTo([-27.786227, 58.832342], 3.5);
-        map.addLayer(kairei);
-        map.addLayer(solitaire);
-        map.addLayer(longqi);
-        map.addLayer(kairei_pop);
-        map.addLayer(solitaire_pop);
-        map.addLayer(longqi_pop);
-    } else {
-        map.flyTo([5.236302, 79.006576], 2.5)
-        map.removeLayer(kairei);
-        map.removeLayer(solitaire);
-        map.removeLayer(longqi);
-        map.removeLayer(kairei_pop);
-        map.removeLayer(solitaire_pop);
-        map.removeLayer(longqi_pop);
-    }
   })
   .onStepExit((response) => {
     // { element, index, direction }

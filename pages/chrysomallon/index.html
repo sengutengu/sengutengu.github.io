@@ -36,24 +36,34 @@
             <div class="sticky-container">
                 <h2>Anatomy</h2>
                 <p>Scroll down to look at some of its amazing anatomical features.</p>
-                <img src="Chrysomallon_squamiferum_9.png"></img>
+                <div class="img-stack">
+                    <img id="base" src="Csq_base.png"></img>
+                    <img class="layer" id="scales" src="Csq_scales.png"></img>
+                    <img class="layer" id="shell" src="Csq_shell.png"></img>
+                    <img class="layer" id="nervous" src="Csq_nervous.png"></img>
+                    <img class="layer" id="circulatory" src="Csq_circulatory.png"></img>
+                </div>
+                
             </div>
             <div class="steps">
-                <div class="step" data-step="a">
+                <div class="step" data-step="anat_a">
+                    <p>This is the scaly-foot snail. It's rather small.</p>
+                </div>
+                <div class="step" data-step="anat_b">
                     <p>Perhaps the most distinctive feature of <i>C. squamiferum</i> is the armor-like scales, or <b>sclerites</b>, covering its foot—they 
                     are composed of iron and sulfur, making the scaly-foot snail the only known organism 
                     to use sulfur (instead of oxygen) for biomineralization (Chen et al. 2017).</p>
                 </div>
-                <div class="step" data-step="b">
+                <div class="step" data-step="anat_c">
                     <p>The shell of <i>C. squamiferum</i> is also composed of iron and sulfur, with a core of aragonite within (source).</p>
                 </div>
-                <div class="step" data-step="c">
+                <div class="step" data-step="anat_d">
                     <p>The nervous system of <i>C. squamiferum</i> is small, suggesting that it does not need high intelligence to survive.</p> 
                 </div>
-                <div class="step" data-step="d">
+                <div class="step" data-step="anat_e">
                     <p>However, <i>C. squamiferum</i> has a very large gill and heart to supply nutrients to the symbiotic bacteria living in its esophageal gland.</p>  
                 </div>
-                <div class="step" data-step="e">▽  ▽  ▽</div>
+                <div class="step" data-step="anat_f">▽  ▽  ▽</div>
             </div>
         </div>
     </section>
@@ -70,7 +80,10 @@
             <div class="steps">
                 <!--you don't need the "data-step" attr, but can be useful for storing instructions for JS -->
                 <div class="step" data-step="map_a">
-                    <p>The Indian Ocean has a bunch of hydrothermal vents.</p></div>
+                    <p>The Indian Ocean is criss-crossed with four mid-ocean ridges, where magma rises and creates new oceanic crust.
+                        They are called the Carlsberg Ridge, Central Indian Ridge, the South West Indian Ridge, and the South East Indian Ridge.
+                        All are dotted with active hydrothermal vents. 
+                    </p></div>
                 <div class="step" data-step="map_b">
                     <p>Scaly-foot snails were first found in the Kairei hydrothermal vent field in Southwestern Indian Ocean by Van Dover et al. in 2001, using <i>ROV Jason</i>. The snail was subsequently characterized by Waren et al. 2003, and named by Chen et al. much later, in 2015.</p></div>
                 <div class="step" data-step="map_c">
@@ -120,6 +133,13 @@
                 <div class="step" data-step="c">In 2009, two other populations of scaly-foot snails were found in Solitaire (Nakamura et al.) and Longqi (Tao et al. 2012) hydrothermal vent fields.</div>
                 <div class="step" data-step="d">while all three populations were determined to belong to one species (cite), the Longqi population was much more genetically distant from the Kairei and Solitaire populations. This suggests that larvae do not tend to travel very far.</div>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="holder">
+            <h2>Conclusion</h2>
+            <p>This page was made with Scrollama and Leaflet packages. I relied on these excellent tutorial videos [1] [2] for Scrollama and these posts [1] [2] for Leaflet.</p>
         </div>
     </section>
 
