@@ -16,6 +16,11 @@ body {
   font-family: "Fira Sans", sans-serif;
 }
 
+a { 
+    color:orange;
+    text-decoration:none;
+}
+
 /* Title page */
 #main {
     height: 100vh;
@@ -87,7 +92,7 @@ img {
 }
 .step {
     padding: 100px 0 200px 0;
-    opacity: 0.2;
+    opacity: 0;
 }
 
 .step p {
@@ -97,11 +102,6 @@ img {
 }
 .step.active {
     opacity: 1;
-    transition: opacity .3s;
-}
-
-.step.invisible {
-    opacity: 0;
     transition: opacity .3s;
 }
 
@@ -140,8 +140,8 @@ img {
     transition: opacity .3s;
 }
 
-.leaflet-popup-content {
-    font-size: 2em !important;
+.leaflet-popup-content, .leaflet-tooltip {
+    font-size: 1.5em !important;
 }
 
 .layer {
