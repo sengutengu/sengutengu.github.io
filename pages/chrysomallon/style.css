@@ -12,7 +12,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-family: "Fira Sans", sans-serif;
 }
 
@@ -151,4 +151,14 @@ img {
 
 .visible {
     opacity: 1;
+}
+
+.metal {
+    font-family: "Metal Mania", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#introduction p {
+    padding-bottom: 1em;
 }
