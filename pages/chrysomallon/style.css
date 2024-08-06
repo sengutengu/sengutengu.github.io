@@ -105,12 +105,23 @@ img {
     transition: opacity .3s;
 }
 
+
+#anatomy {
+    padding-top: 0;
+}
+
 /* anatomy */
 #anatomy img {
     margin-left: 0;
     margin-right: auto;
     width: 50%;
     padding: 5%;
+}
+
+#endosymbiosis img, #sclerite img {
+    margin-left: 0;
+    margin-right: auto;
+    height:500px;
 }
 
 .img-stack {
@@ -159,6 +170,16 @@ img {
     font-style: normal;
 }
 
+#introduction {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
 #introduction p {
     padding-bottom: 1em;
+}
+
+.step_img {
+    max-width: 75%;
+    margin: 0 auto;
 }
