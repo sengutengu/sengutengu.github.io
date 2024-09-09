@@ -2,10 +2,13 @@
   "name": "sengutengu.github.io",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://sengutengu.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d dist",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
@@ -23,6 +26,7 @@
     "vite": "^5.4.3"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "nano": "^10.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
