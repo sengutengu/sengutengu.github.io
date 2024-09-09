@@ -52,73 +52,6 @@
   padding: 0;
 }
 
-/* Navbar. Eventually separate once I figure out React */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 6rem;
-  border-bottom: 1px solid black;
-  padding: 0 3rem;
-  font-family: "EBGaramond-Regular";
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  background-color: white;
-}
-
-nav .title a {
-  text-decoration: none;
-  color: #03671f;
-  font-weight: bold;
-}
-
-nav .title span {
-  font-size: 1.1rem;
-  margin-left: 0.3rem;
-}
-nav .title .korean-name {
-  font-family: "NanumMyeongjo";
-}
-
-nav .title .chinese-name {
-  font-family: "Zen Old Mincho";
-}
-
-nav ul {
-  display: flex;
-}
-
-nav ul li {
-  list-style: none;
-}
-
-nav ul li a {
-  display: block;
-  text-decoration: none;
-  color: black;
-  margin-left: 3rem;
-}
-
-nav .menu {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.25rem;
-  height: 2rem;
-  position: absolute;
-  top: 0.75rem;
-  right: 0.5rem;
-}
-
-nav .menu span {
-  height: 0.4rem;
-  width: 100%;
-  background-color: black;
-}
-
-/* ============================ */
-
 main {
   font-family: "Open Sans";
   min-height: 80vh;
@@ -146,6 +79,23 @@ h2 {
 article {
   width: 66%;
   margin: 5rem auto;
+}
+
+article .img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+article .img-wrapper span {
+  font-size: 0.8em;
+  margin-top: 0.5rem;
+}
+
+article .img-wrapper img {
+  max-width: 100%;
 }
 
 article p {
@@ -207,21 +157,97 @@ footer .footer-cols span.title {
 
 footer .line {
   width: 2rem;
-  height: 1px;
+  height: 2px;
   background-color: #03671f;
-  margin: 0.5rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
+/* Navbar. Eventually separate once I figure out React */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6rem;
+  border-bottom: 1px solid black;
+  padding: 0 3rem;
+  font-family: "EBGaramond-Regular";
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+nav .title a {
+  text-decoration: none;
+  color: #03671f;
+  font-weight: bold;
+}
+
+nav .title span {
+  font-size: 1.1rem;
+  margin-left: 0.3rem;
+}
+nav .title .korean-name {
+  font-family: "NanumMyeongjo";
+}
+
+nav .title .chinese-name {
+  font-family: "Zen Old Mincho";
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a:link,
+nav ul li a:visited,
+nav ul li a:hover,
+nav ul li a:active {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-left: 3rem;
+}
+
+nav .menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+}
+
+nav .menu span {
+  height: 0.4rem;
+  width: 100%;
+  background-color: black;
+}
+
+/* ============================ */
+
 @media screen and (max-width: 1024px) {
-  article {
+  article,
+  footer .footer-cols {
     width: 76%;
-    padding: 30px;
+    padding: 2em;
     margin: 0 auto;
+  }
+
+  .footer-cols {
+    width: 76%;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  article {
+  article,
+  footer .footer-cols {
     width: 86%;
   }
 
@@ -260,7 +286,10 @@ footer .line {
     padding: 0.5rem;
   }
 
-  nav ul li a {
+  nav ul li a:link,
+  nav ul li a:visited,
+  nav ul li a:hover,
+  nav ul li a:active {
     margin: 0;
   }
 
@@ -275,7 +304,22 @@ footer .line {
 }
 
 @media only screen and (max-width: 640px) {
-  article {
+  article,
+  footer .footer-cols {
     width: 100%;
+  }
+
+  footer {
+    padding: 0;
+  }
+
+  footer .footer-cols {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+  }
+
+  footer .footer-cols .footer-col {
+    margin-bottom: 2em;
   }
 }
