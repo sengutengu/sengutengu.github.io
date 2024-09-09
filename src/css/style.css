@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "EBGaramond-Regular";
+  src: url("../fonts/EBGaramond-Regular.woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EBGaramond-Italic";
+  src: url("../fonts/EBGaramond-Italic.woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NanumMyeongjo";
+  src: url("../fonts/NanumMyeongjo.woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("../fonts/ZenOldMincho-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar. Eventually separate once I figure out React */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  border-bottom: 1px solid black;
+  padding: 0 3rem;
+  font-family: "EBGaramond-Regular";
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+nav .title a {
+  text-decoration: none;
+  color: #03671f;
+  font-weight: bold;
+}
+
+nav .title span {
+  font-size: 1.1rem;
+  margin-left: 0.3rem;
+}
+nav .title .korean-name {
+  font-family: "NanumMyeongjo";
+}
+
+nav .title .chinese-name {
+  font-family: "Zen Old Mincho";
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-left: 3rem;
+}
+
+/* ============================ */
+
+main {
+  font-family: "Open Sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "EBGaramond-Regular";
+  font-weight: bold;
+}
+
+article {
+  width: 66%;
+  margin: 5rem auto;
+}
+
+article p {
+  margin: 1rem 0;
+}
+
+article p .green {
+  color: #03671f;
+}
+
+article a:link,
+article a:visited,
+article a:hover,
+article a:active {
+  color: #03671f;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  article {
+    width: 76%;
+    padding: 30px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  article {
+    width: 86%;
+    padding: 30px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  article {
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+  }
+}
