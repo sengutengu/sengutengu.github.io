@@ -57,7 +57,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 6rem;
+  min-height: 6rem;
   border-bottom: 1px solid black;
   padding: 0 3rem;
   font-family: "EBGaramond-Regular";
@@ -98,6 +98,23 @@ nav ul li a {
   text-decoration: none;
   color: black;
   margin-left: 3rem;
+}
+
+nav .menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+}
+
+nav .menu span {
+  height: 0.4rem;
+  width: 100%;
+  background-color: black;
 }
 
 /* ============================ */
@@ -165,7 +182,7 @@ article object.pdf {
   height: 100%;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   article {
     width: 76%;
     padding: 30px;
@@ -173,18 +190,62 @@ article object.pdf {
   }
 }
 
-@media only screen and (min-width: 641px) and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   article {
     width: 86%;
-    padding: 30px;
-    margin: 0 auto;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    position: relative;
+  }
+
+  nav .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+  }
+
+  nav .title a {
+    font-size: 2rem;
+  }
+
+  nav .title span {
+    margin: 0;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid black;
+    padding: 1rem 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  nav ul li a {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin: 0.67em 0;
+  }
+  h2 {
+    font-size: 1em;
+    margin: 0.75em 0;
   }
 }
 
 @media only screen and (max-width: 640px) {
   article {
     width: 100%;
-    padding: 30px;
-    margin: 0 auto;
   }
 }
