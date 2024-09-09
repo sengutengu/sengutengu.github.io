@@ -1,79 +1,80 @@
 @font-face {
-    font-family: 'LibreFranklin';
-    src: url('../fonts/LibreFranklin/LibreFranklin.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "LibreFranklin";
+  src: url("../fonts/LibreFranklin/LibreFranklin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* trying out CSS vars */
-:root { 
-    --gap: 5px;
-    --height: 62px;
-    --ratio: 1;
-    --light-gray: rgb(211, 214, 218);
+:root {
+  --gap: 5px;
+  --height: 62px;
+  --ratio: 1;
+  --light-gray: rgb(211, 214, 218);
 }
 
 article {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
 }
 
 .wordle-wrapper {
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-gap: var(--gap);
-    padding: 10px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: var(--gap);
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .wordle-row {
-    display:grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: var(--gap);
 }
 
 .letter {
-    width:calc(var(--ratio) * var(--height));
-    height:var(--height);
-    border: 2px solid var(--light-gray);   
+  width: calc(var(--ratio) * var(--height));
+  height: var(--height);
+  border: 2px solid var(--light-gray);
 }
 
 .keyboard-wrapper {
-    margin-top: 20px;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: var(--gap);
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: var(--gap);
 }
 
 .keyboard-row {
-    display: flex;
-    flex-direction: row;
-    gap: var(--gap);
-    margin: 0 auto 8px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  margin: 0 auto 8px;
 }
 
 .key {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--light-gray);
-    font-family: "LibreFranklin";
-    font-weight: bold;
-    font-size: 1.25em;
-    height: 58px;
-    width: 40px;
-    border-radius: 4px;
-    border:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-gray);
+  font-family: "LibreFranklin";
+  font-weight: bold;
+  font-size: 1.25em;
+  height: 58px;
+  width: 40px;
+  border-radius: 4px;
+  border: none;
 }
 
-.keyboard-row:last-of-type .key:first-of-type, .keyboard-row:last-of-type .key:last-of-type {
-    width: 65px;
-    padding: 0 10px;
-} 
+.keyboard-row:last-of-type .key:first-of-type,
+.keyboard-row:last-of-type .key:last-of-type {
+  width: 65px;
+  padding: 0 10px;
+}
 
 .keyboard-row:last-of-type .key:first-of-type {
-    font-size: 0.75em;
+  font-size: 0.75em;
 }
